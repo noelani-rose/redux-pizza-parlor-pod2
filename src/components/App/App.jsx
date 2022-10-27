@@ -28,7 +28,7 @@ const fetchPizzas = () => {
   })
   .then((res) => {
     dispatch ({
-      type: 'DISPALY_PIZZAS',
+      type: 'DISPLAY_PIZZAS',
       payload: res.data
     })
   })
@@ -74,7 +74,6 @@ const addOrder = (order) => {
     console.log('error POSTing new order', err)
   })
 }
-
 
 
   return (
