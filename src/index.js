@@ -15,20 +15,30 @@ const cart = (state = [], action) => {
                 action.payload
             ];
         case 'REMOVE_FROM_CART':
-            let result = state.filter(pizza => pizza.id === action.payload);
+            let result = state.filter(pizza => pizza.id !== action.payload);
             return state;
         default: return state;
     }
 };
 
-const admin = (state= [], action) => {
-    if(action.type === 'ADD_ADMIN'){
+const adminOrders = (state= [], action) => {
+    if(action.type === 'DISPLAY_ORDERS'){
         return [
             ...state,
             action.payload
         ]
     }
     return state;
+}
+
+const newOrder = (state = {}, action) => {
+    switch(action.type){
+        case 'SUB_NEW_ORDER':
+            return action.payload;
+        case 'CLR_NEW_ORDER':
+            return {};
+        default: return state;
+    }
 }
 
 const total = (state = 0, action) =>{
@@ -56,7 +66,8 @@ const pizzas = (state = [], action) => {
 const storeInstace = createStore(
     combineReducers({
         cart,
-        admin,
+        adminOrders,
+        newOrder,
         total,
         pizzas
     }),
