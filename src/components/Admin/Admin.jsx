@@ -1,12 +1,11 @@
 import React from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 
 import './Admin.css';
 
 function Admin ({ fetchAllOrders }) {
-    const dispatch = useDispatch();
     const adminOrders = useSelector((store) => {
         return store.adminOrders
     })
@@ -20,7 +19,7 @@ function Admin ({ fetchAllOrders }) {
 
     return (
         <>
-        <table className = "table">
+        <table>
             <thead>
                 <tr>
                     <th>Name</th>
@@ -28,6 +27,14 @@ function Admin ({ fetchAllOrders }) {
                     <th>Type</th>
                     <th>Cost</th>
                 </tr>
+
+                    <tr>
+                        <td>name</td>
+                        <td>time</td>
+                        <td>type</td>
+                        <td>cost</td>
+                    </tr>
+
             </thead>
             </table>
         </>
@@ -40,9 +47,9 @@ export default Admin;
 
 
 // TODO: 
-    // - import function dispalyAllOrders
-    // - send dispatch action type DISPLAY_ORDERS and payload of ORDERS 
-    // - receive DISPLAY_ORDERS action on index.js
+    // - import function dispalyAllOrders [✅]
+    // - receive DISPLAY_ORDERS action on index.js [✅]
+
     // - map through the orders and render
             // - TABLE WITH : customer name, time order placed, type, cost 
 
