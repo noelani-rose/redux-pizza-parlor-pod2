@@ -15,7 +15,7 @@ function Admin ({ fetchAllOrders }) {
         console.log('admin orders are', adminOrders)
 
       }, [])
-    
+
 
     return (
         <>
@@ -28,15 +28,21 @@ function Admin ({ fetchAllOrders }) {
                     <th>Cost</th>
                 </tr>
 
-                    <tr>
-                        <td>name</td>
-                        <td>time</td>
-                        <td>type</td>
-                        <td>cost</td>
-                    </tr>
+                <tr>
+                    <td>name</td>
+                    <td>time</td>
+                    <td>type</td>
+                    <td>cost</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>time</td>
+                    <td>type</td>
+                    <td>cost</td>
+                </tr>
 
             </thead>
-            </table>
+        </table>
         </>
     )
 }
