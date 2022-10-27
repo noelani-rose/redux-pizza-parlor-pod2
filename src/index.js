@@ -41,7 +41,7 @@ const newOrder = (state = {}, action) => {
     }
 }
 
-const total = (state = 0, action) =>{
+const total = (state = 14.95, action) =>{
     switch (action.type){
         case 'ADD_TOTAL':
             state + action.payload;
@@ -49,8 +49,9 @@ const total = (state = 0, action) =>{
         case 'REMOVE_TOTAL':
             state - action.payload;
             return state;
-        default: return state;
     }
+    return state;
+    
 }
 
 const pizzas = (state = [], action) => {
