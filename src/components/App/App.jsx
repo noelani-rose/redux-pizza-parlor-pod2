@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 // IMPORT COMPONENTS 
+import SelectPizza from '../SelectPizza/SelectPizza';
 
 
 
@@ -28,7 +29,7 @@ const fetchPizzas = () => {
   })
   .then((res) => {
     dispatch ({
-      type: 'DISPALY_PIZZAS',
+      type: 'DISPLAY_PIZZAS',
       payload: res.data
     })
   })
@@ -39,7 +40,7 @@ const fetchPizzas = () => {
 
 
 // AXIOS REGUEST (GET) FOR ALL ORDERS
-const fetchAllOrdrs = () => {
+const fetchAllOrders = () => {
   console.log('in fetch all orders GET function')
   axios({
     method: 'GET', 
@@ -85,6 +86,7 @@ const addOrder = (order) => {
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
+      <SelectPizza />
   
     </div>
   );
