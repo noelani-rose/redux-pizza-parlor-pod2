@@ -38,13 +38,42 @@ const fetchPizzas = () => {
 }
 
 
-// AXIOS REGUEST (GET) FOR ALL ORDERS 
-
-
+// AXIOS REGUEST (GET) FOR ALL ORDERS
+const fetchAllOrdrs = () => {
+  console.log('in fetch all orders GET function')
+  axios({
+    method: 'GET', 
+    url: '/api/order'
+  })
+  .then((res) => {
+    dispatch({
+      type: 'DISPLAY_ORDERS', 
+      payload: res.data
+    })
+  })
+  .catch((err) => {
+    console.log ('error POSTing display orders', err)
+  })
+} 
 
 
 
 // AXIOS REQUEST (POST) FOR CUSTOMER ORDERS 
+                // pass in "order" object from handleSubmit funciton
+const addOrder = (order) => {
+  console.log('in add order POST function')
+  axios({
+    method: 'POST', 
+    url: '/api/order',
+    data: order
+  })
+  .then((res) => {
+    console.log('successfully POSTed new order', res)
+  })
+  .catch((err) => {
+    console.log('error POSTing new order', err)
+  })
+}
 
 
 
