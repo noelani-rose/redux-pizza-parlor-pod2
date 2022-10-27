@@ -39,7 +39,7 @@ const fetchPizzas = () => {
 
 
 // AXIOS REGUEST (GET) FOR ALL ORDERS
-const fetchAllOrdrs = () => {
+const fetchAllOrders = () => {
   console.log('in fetch all orders GET function')
   axios({
     method: 'GET', 
@@ -84,8 +84,9 @@ const addOrder = (order) => {
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
       <Route exact path = "/admin">
-        <Admin fetchAllOrdrs = {fetchAllOrdrs}/> 
+        <Admin fetchAllOrders = {fetchAllOrders}/> 
       </Route>
+
       <Route exact path = '/'>
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
