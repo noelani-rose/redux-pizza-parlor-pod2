@@ -16,7 +16,7 @@ const cart = (state = [], action) => {
             ];
         case 'REMOVE_FROM_CART':
             let result = state.filter(pizza => pizza.id !== action.payload);
-            return state;
+            return result;
         default: return state;
     }
 };
