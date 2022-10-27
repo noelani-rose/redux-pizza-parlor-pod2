@@ -79,7 +79,10 @@ const addOrder = (order) => {
 
 
   return (
-    <div className='App'>
+   <>
+    <Router>
+      <Route path="/" exact>
+      <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
@@ -89,6 +92,9 @@ const addOrder = (order) => {
       <SelectPizza />
   
     </div>
+      </Route>
+    </Router>
+   </>
   );
 }
 

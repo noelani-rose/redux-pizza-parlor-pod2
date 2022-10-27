@@ -5,8 +5,8 @@ import { useState } from "react";
 function PizzaItem({ pizza }) {
     const [display, setDisplay] = useState(true);
     
-    const dispatch = useDispatch;
-    
+    const dispatch = useDispatch();
+
     const addPizza = (evt) =>{
         evt.preventDefault();
         setDisplay(!display)
@@ -21,7 +21,7 @@ function PizzaItem({ pizza }) {
         console.log('in remove pizza',pizza)
 
         dispatch({
-            type: 'SUB_TOTAL',
+            type: 'REMOVE_TOTAL',
             payload: pizza.price
         })
 
