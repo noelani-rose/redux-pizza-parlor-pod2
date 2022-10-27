@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 // IMPORT COMPONENTS 
-
+import Admin from '../Admin/Admin';
 
 
 
@@ -28,7 +28,7 @@ const fetchPizzas = () => {
   })
   .then((res) => {
     dispatch ({
-      type: 'DISPALY_PIZZAS',
+      type: 'DISPLAY_PIZZAS',
       payload: res.data
     })
   })
@@ -78,16 +78,21 @@ const addOrder = (order) => {
 
 
   return (
+  <Router>
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
-  
+      <Route path = "/admnin">
+        <Admin fetchAllOrdrs = {fetchAllOrdrs}/> 
+      </Route>
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
   
     </div>
+    </Router>
   );
 }
 
 export default App;
+
