@@ -83,11 +83,13 @@ const addOrder = (order) => {
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
-      <Route path = "/admnin">
+      <Route exact path = "/admin">
         <Admin fetchAllOrdrs = {fetchAllOrdrs}/> 
       </Route>
+      <Route exact path = '/'>
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
+      </Route>
   
     </div>
     </Router>
