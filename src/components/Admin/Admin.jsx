@@ -6,9 +6,8 @@ import { useEffect } from 'react';
 import './Admin.css';
 
 function Admin ({ fetchAllOrders }) {
-    const adminOrders = useSelector((store) => {
-        return store.adminOrders
-    })
+    const adminOrders = useSelector(store => store.adminOrders
+)
 
     useEffect(() => {
         fetchAllOrders();
@@ -27,28 +26,23 @@ function Admin ({ fetchAllOrders }) {
                     <th>Type</th>
                     <th>Cost</th>
                 </tr>
-
-                <tr>
-                    <td>name</td>
-                    <td>time</td>
-                    <td>type</td>
-                    <td>cost</td>
-                </tr>
-                <tr>
-                    <td>name</td>
-                    <td>time</td>
-                    <td>type</td>
-                    <td>cost</td>
-                </tr>
-
             </thead>
+                <tbody>
+                {adminOrders.map((order) => (
+                    <tr key = {order.id}>
+                        <td>{order.name}</td>
+                        <td>{order.time}</td>
+                        <td>{order.type}</td>
+                        <td>{order.cost}</td>
+                    </tr>
+                ))}
+            </tbody>
         </table>
         </>
     )
 }
 
 export default Admin;
-
 
 
 
