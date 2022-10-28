@@ -6,7 +6,11 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 // IMPORT COMPONENTS 
+
 import SelectPizza from '../SelectPizza/SelectPizza';
+
+
+import Admin from '../Admin/Admin';
 
 
 
@@ -79,10 +83,11 @@ const addOrder = (order) => {
 
 
   return (
-   <>
+
     <Router>
+    <div className='App'>
       <Route path="/" exact>
-      <div className='App'>
+      
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
@@ -90,12 +95,17 @@ const addOrder = (order) => {
       {/* <img src='images/pizza_photo.png' /> */}
       <p>Pizza is great.</p>
       <SelectPizza />
+       </Route>
+    
+      
+      <Route exact path = "/admin">
+        <Admin fetchAllOrders = {fetchAllOrders}/> 
+      </Route>
   
     </div>
-      </Route>
     </Router>
-   </>
   );
 }
 
 export default App;
+
