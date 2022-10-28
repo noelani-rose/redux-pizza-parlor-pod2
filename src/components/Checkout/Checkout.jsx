@@ -73,7 +73,7 @@ function Checkout({addOrder}){
             </thead>
             <tbody>
                 <tr>
-                    <td>{`${newOrder.customer_name}`}</td>
+                    <td>Return pizza name here</td>
                     <td>Return price from pizza table here</td>
                 </tr>
             </tbody>
