@@ -41,14 +41,14 @@ const newOrder = (state = {}, action) => {
     }
 }
 
-const total = (state = 14.95, action) =>{
+const total = (state = 0, action) =>{
     switch (action.type){
         case 'ADD_TOTAL':
-            state + action.payload;
-            return state;
+            let newState = state + Number(action.payload);
+            return newState;
         case 'REMOVE_TOTAL':
-            state - action.payload;
-            return state;
+            let reducedState = state - Number(action.payload);
+            return reducedState;
     }
     return state;
     
