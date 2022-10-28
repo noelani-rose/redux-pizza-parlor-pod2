@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import Checkout from '../Checkout/Checkout';
 
 // IMPORT COMPONENTS 
-
+import Admin from '../Admin/Admin';
 
 
 
@@ -78,6 +78,7 @@ const addOrder = (order) => {
 
 
   return (
+
     <Router>
     <div className='App'>
       <header className='App-header'>
@@ -85,13 +86,13 @@ const addOrder = (order) => {
       </header>
 
       <Route exact path="/checkout">            
-          <Checkout addOrder = {addOrder} />
+          <Checkout />
       </Route>
   
-      <Route exact path = '/'>
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p></Route>
 
+      <Route exact path = "/admin">
+        <Admin fetchAllOrders = {fetchAllOrders}/> 
+      </Route>
   
     </div>
     </Router>
@@ -99,3 +100,4 @@ const addOrder = (order) => {
 }
 
 export default App;
+

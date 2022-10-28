@@ -21,12 +21,12 @@ const cart = (state = [], action) => {
     }
 };
 
-const adminOrders = (state= [], action) => {
+const adminOrders = (state = [], action) => {
     if(action.type === 'DISPLAY_ORDERS'){
-        return [
-            action.payload
-        ]
-    }
+
+        return action.payload;
+       
+   }
     return state;
 }
 
