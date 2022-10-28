@@ -23,8 +23,10 @@ const cart = (state = [], action) => {
 
 const adminOrders = (state = [], action) => {
     if(action.type === 'DISPLAY_ORDERS'){
-        return state
-    }
+
+        return action.payload;
+       
+   }
     return state;
 }
 
@@ -58,7 +60,6 @@ const pizzas = (state = [], action) => {
     }
     return state;
 }
-
 
 
 
