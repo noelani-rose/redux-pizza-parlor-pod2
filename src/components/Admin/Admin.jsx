@@ -30,10 +30,10 @@ function Admin ({ fetchAllOrders }) {
                 <tbody>
                 {adminOrders.map((order) => (
                     <tr key = {order.id}>
-                        <td>{order.name}</td>
+                        <td>{order.customer_name}</td>
                         <td>{order.time}</td>
                         <td>{order.type}</td>
-                        <td>{order.cost}</td>
+                        <td>{order.total}</td>
                     </tr>
                 ))}
             </tbody>

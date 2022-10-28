@@ -16,6 +16,10 @@ function PizzaItem({ pizza }) {
       type: "ADD_TOTAL",
       payload: pizza.price,
     });
+    dispatch({
+      type:'ADD_TO_CART',
+      payload: pizza
+    })
   };
   const removePizza = (evt) => {
     evt.preventDefault();
@@ -26,6 +30,10 @@ function PizzaItem({ pizza }) {
       type: "REMOVE_TOTAL",
       payload: pizza.price,
     });
+    dispatch({
+      type:'REMOVE_FROM_CART',
+      payload: pizza
+    })
   };
 
   return (

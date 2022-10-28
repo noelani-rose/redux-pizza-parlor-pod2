@@ -36,7 +36,6 @@ function Checkout({addOrder}){
             if (result.isConfirmed) {
               swal.fire('Checkout Complete!', '', 'success')
                //Post to database
-                addOrder(newOrder);
 
                 //Clearing new order on click
                 dispatch({
@@ -87,12 +86,16 @@ function Checkout({addOrder}){
                 </tr>
             </thead>
             <tbody>
-                {/* map through cart and get pizza items */}
-                {/* put pizza items into separate component */}
-                <tr>
-                    <td>Return pizza name here</td>
-                    <td>Return price from pizza table here</td>
-                </tr>
+                {cart.map(pizza => (
+                  <tr key={pizza.id}>
+                    <td>
+                        {pizza.name}
+                    </td>
+                    <td>
+                        {pizza.price}
+                    </td>
+                  </tr>  
+                ))}
             </tbody>
         </table>
 

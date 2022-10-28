@@ -94,20 +94,18 @@ const addOrder = (order) => {
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
+      {/* <img src='images/pizza_photo.png' /> */}
+      <p>Pizza is great.</p>
+      <SelectPizza />
+       </Route>
 
-      <Route exact path="/checkout">            
+       <Route exact path="/checkout">            
           <Checkout />
       </Route>
   
       <Route exact path='/customer_form'>     
          <CustomerForm  addOrder={addOrder}/>
-
       </Route>
-
-      {/* <img src='images/pizza_photo.png' /> */}
-      <p>Pizza is great.</p>
-      <SelectPizza />
-       </Route>
     
       <Route exact path = "/admin">
         <Admin fetchAllOrders = {fetchAllOrders}/> 
