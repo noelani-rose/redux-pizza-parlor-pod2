@@ -48,6 +48,8 @@ const total = (state = 0, action) =>{
             return Math.ceil(reducedTotal*100)/100;
         default: return state;
     }
+    return state;
+    
 }
 
 const pizzas = (state = [], action) => {
