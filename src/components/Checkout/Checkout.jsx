@@ -43,10 +43,13 @@ function Checkout({addOrder}){
                     payload: ''
                 });
 
+
                 //Clear the cart
                 dispatch({
-                    type: 'REMOVE_FROM_CART',
-                    payload: ''
+                    type: 'CLEAR_CART',
+                });
+                dispatch({
+                    type: 'RESET_TOTAL'
                 });
 
   

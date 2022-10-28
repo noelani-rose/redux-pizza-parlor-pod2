@@ -32,7 +32,7 @@ function PizzaItem({ pizza }) {
     });
     dispatch({
       type:'REMOVE_FROM_CART',
-      payload: pizza
+      payload: pizza.id
     })
   };
 

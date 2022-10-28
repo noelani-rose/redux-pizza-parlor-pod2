@@ -17,6 +17,8 @@ const cart = (state = [], action) => {
         case 'REMOVE_FROM_CART':
             let result = state.filter(pizza => pizza.id !== action.payload);
             return result;
+        case 'CLEAR_CART':
+            return [];
         default: return state;
     }
 };
@@ -48,6 +50,8 @@ const total = (state = 0, action) =>{
         case 'REMOVE_TOTAL':
              let reducedTotal =state - Number(action.payload);
             return Math.ceil(reducedTotal*100)/100;
+        case 'RESET_TOTAL':
+            return 0;
         default: return state;
     }
     return state;
