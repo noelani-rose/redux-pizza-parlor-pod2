@@ -13,8 +13,8 @@ function SelectPizza(){
     }
     return(
         <>
-            <h3>Step 1: Select Your Pizza</h3>
-            <h4>total:{total}</h4>
+            <h2>Step 1: Select Your Pizza</h2>
+            <h3>Total:${total}</h3>
             <ul>
             {pizzaList.map((pizza) =>(
                 <PizzaItem 
@@ -24,7 +24,7 @@ function SelectPizza(){
                 />
             ))}
             </ul>
-            <button onClick={changePage}>NEXT</button>
+            <button className="nextBtn" onClick={changePage}>NEXT</button>
 
         </>
 

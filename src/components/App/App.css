@@ -26,20 +26,39 @@
   clear: both;
 }
 body{
-  background-color:indianred;
+  background-color:#5cbdb9
 }
 .row{
-  height: 150px;
+  height: 200px;
   margin: 10px;
   border: 100px;
-  background-color: azure;
+  background-color:#e8f9fd
 }
 button{
   padding-left: 50px;
   padding-right: 50px;
-  margin: 5px;
+  margin: 20px;
+  float:inline-end;
 }
 
 .name{
   font-size: 50px;
+}
+
+.nextBtn{
+  padding-left: 200px;
+  padding-right: 200px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.price{
+  border: 200px;
+  margin: 20px;
+  float: right;
+}
+
+.description{
+  padding: 20px;
 }

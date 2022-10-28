@@ -34,9 +34,10 @@ function PizzaItem({ pizza }) {
         <div className="row">
             <div className="name">{pizza.name}</div>
             <div className="description">{pizza.description}
-            <div >{pizza.price}</div>
+            <div className="price">${pizza.price}</div>
+                    <br />
             {display === true && <button className="button"onClick={addPizza}>Add</button>}
-            {display === false && <button onClick={removePizza}>Remove</button>}
+            {display === false && <button className="button" onClick={removePizza}>Remove</button>}
             </div>
           </div>
       </div>
