@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 // IMPORT COMPONENTS 
-
+import Admin from '../Admin/Admin';
 
 
 
@@ -28,7 +28,7 @@ const fetchPizzas = () => {
   })
   .then((res) => {
     dispatch ({
-      type: 'DISPALY_PIZZAS',
+      type: 'DISPLAY_PIZZAS',
       payload: res.data
     })
   })
@@ -39,7 +39,7 @@ const fetchPizzas = () => {
 
 
 // AXIOS REGUEST (GET) FOR ALL ORDERS
-const fetchAllOrdrs = () => {
+const fetchAllOrders = () => {
   console.log('in fetch all orders GET function')
   axios({
     method: 'GET', 
@@ -78,16 +78,24 @@ const addOrder = (order) => {
 
 
   return (
+  <Router>
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
-  
+      <Route exact path = "/admin">
+        <Admin fetchAllOrders = {fetchAllOrders}/> 
+      </Route>
+
+      <Route exact path = '/'>
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
+      </Route>
   
     </div>
+    </Router>
   );
 }
 
 export default App;
+
