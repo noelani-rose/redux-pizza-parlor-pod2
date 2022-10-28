@@ -1,0 +1,64 @@
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+td, th {
+    border: 1px solid;
+    padding: 10px;
+    
+}
+
+table {
+    margin: 0 auto;
+    justify-content: center;
+    border-collapse:collapse;
+    width: 50em;
+
+}
+
+tbody:nth-child(odd){
+    background-color: lightgray;
+}
+
+thead {
+    background-color: lightgray;
+}
+
+.checkoutBtn {
+    padding: 10px;
+    background-color: lightblue;
+    border-radius: 4px;
+    width: 10em;
+    height: 3em;
+    margin-top: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+    position: relative;
+    left: 52em;
+
+}
+
+.customerInfo {
+    justify-content: flex-start;
+    width: 20em;
+    margin-bottom: 10px;
+}
+
+.checkoutTitle {
+    justify-content: flex-start;
+    width: 20em;
+}
+
+.deliveryType, .total {
+    text-align: right;
+    margin-right: 2em;
+    padding-right: 5em;
+}
+
+
+
+
+

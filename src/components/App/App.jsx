@@ -4,6 +4,7 @@ import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import Checkout from '../Checkout/Checkout';
 
 // IMPORT COMPONENTS 
 
@@ -39,7 +40,7 @@ const fetchPizzas = () => {
 
 
 // AXIOS REGUEST (GET) FOR ALL ORDERS
-const fetchAllOrdrs = () => {
+const fetchAllOrders = () => {
   console.log('in fetch all orders GET function')
   axios({
     method: 'GET', 
@@ -77,15 +78,23 @@ const addOrder = (order) => {
 
 
   return (
+    <Router>
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
+
+      <Route exact path="/checkout">            
+          <Checkout addOrder = {addOrder} />
+      </Route>
   
+      <Route exact path = '/'>
       <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
+      <p>Pizza is great.</p></Route>
+
   
     </div>
+    </Router>
   );
 }
 
