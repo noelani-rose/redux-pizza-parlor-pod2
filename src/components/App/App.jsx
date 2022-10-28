@@ -8,6 +8,11 @@ import CustomerForm from '../CustomerForm/CustomerForm';
 
 // IMPORT COMPONENTS 
 
+import SelectPizza from '../SelectPizza/SelectPizza';
+
+
+import Admin from '../Admin/Admin';
+
 
 
 
@@ -29,7 +34,7 @@ const fetchPizzas = () => {
   })
   .then((res) => {
     dispatch ({
-      type: 'DISPALY_PIZZAS',
+      type: 'DISPLAY_PIZZAS',
       payload: res.data
     })
   })
@@ -40,7 +45,7 @@ const fetchPizzas = () => {
 
 
 // AXIOS REGUEST (GET) FOR ALL ORDERS
-const fetchAllOrdrs = () => {
+const fetchAllOrders = () => {
   console.log('in fetch all orders GET function')
   axios({
     method: 'GET', 
@@ -79,14 +84,32 @@ const addOrder = (order) => {
 
 
   return (
+
+    <Router>
     <div className='App'>
-      <Router>
+
+      <Route path="/" exact>
+      
+      <header className='App-header'>
+        <h1 className='App-title'>Prime Pizza</h1>
+      </header>
+  
       <Route exact path='/customer_form'>     
          <CustomerForm  addOrder={addOrder}/>
       </Route>
-      </Router>
+
+      {/* <img src='images/pizza_photo.png' /> */}
+      <p>Pizza is great.</p>
+      <SelectPizza />
+       </Route>
+    
+      <Route exact path = "/admin">
+        <Admin fetchAllOrders = {fetchAllOrders}/> 
+      </Route>  
     </div>
+    </Router>
   );
 }
 
 export default App;
+

@@ -21,12 +21,9 @@ const cart = (state = [], action) => {
     }
 };
 
-const adminOrders = (state= [], action) => {
+const adminOrders = (state = [], action) => {
     if(action.type === 'DISPLAY_ORDERS'){
-        return [
-            ...state,
-            action.payload
-        ]
+        return state
     }
     return state;
 }
@@ -44,11 +41,12 @@ const newOrder = (state = {}, action) => {
 const total = (state = 0, action) =>{
     switch (action.type){
         case 'ADD_TOTAL':
-            let newState = state + Number(action.payload);
-            return newState;
+            let newTotal =state + Number(action.payload);
+            return Math.ceil(newTotal*100)/100;
         case 'REMOVE_TOTAL':
-            let reducedState = state - Number(action.payload);
-            return reducedState;
+             let reducedTotal =state - Number(action.payload);
+            return Math.ceil(reducedTotal*100)/100;
+        default: return state;
     }
     return state;
     
