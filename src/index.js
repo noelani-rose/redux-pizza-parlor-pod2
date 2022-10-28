@@ -21,9 +21,7 @@ const cart = (state = [], action) => {
     }
 };
 
-const adminOrders = (state= [{id: 1, name: 'charles', time: '4:45', type: 'deliver', cost: '32.50'}, 
-{id: 2, name: 'dude', time: '3:30', type: 'pick-up', cost: '22.30'}],
- action) => {
+const adminOrders = (state = [], action) => {
     if(action.type === 'DISPLAY_ORDERS'){
         return state
     }
