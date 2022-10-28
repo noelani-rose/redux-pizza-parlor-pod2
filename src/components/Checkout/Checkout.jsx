@@ -45,6 +45,11 @@ function Checkout({addOrder}){
                 });
 
                 //Clear the cart
+                dispatch({
+                    type: 'REMOVE_FROM_CART',
+                    payload: ''
+                });
+
   
           //Navigating back to home page
           history.push('/');
