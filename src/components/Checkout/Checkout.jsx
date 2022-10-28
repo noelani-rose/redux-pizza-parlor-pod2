@@ -3,6 +3,7 @@ import {React} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import '../Checkout/Checkout.css';
+import swal from 'sweetalert2';
 
 function Checkout({addOrder}){
 
@@ -21,27 +22,35 @@ function Checkout({addOrder}){
         return store.cart
     })
 
-
     const handleCheckout = (newOrder) => {
         console.log('in handleCheckout');
   
         //Add a confirmation dialogue 
-        //Had to npm install sweetalerts 
-        swal("Finish Checkout?", {
-            buttons: ["Cancel", "Yes!"],
-          });
+        //Had to npm install sweetalert2
+        swal.fire({
+            title:'Finish Checkout?',
+            showCancelButton: true,
+            confirmButtonText: 'Yes!',
+            denyButtonText: `Cancel`,
+          }).then((result) => {
+            if (result.isConfirmed) {
+              swal.fire('Checkout Complete!', '', 'success')
+               //Post to database
+                addOrder(newOrder);
+
+                //Clearing new order on click
+                dispatch({
+                    type: 'CLR_NEW_ORDER',
+                    payload: ''
+                });
+  
+          //Navigating back to home page
+          history.push('/');
+            } else if (result.isDenied) {
+              swal.fire('Changes are not saved', '', 'info')
+            }
+          })
         
-        //Post to database
-        addOrder(newOrder);
-
-        //Clearing new order on click
-        dispatch({
-          type: 'CLR_NEW_ORDER',
-          payload: ''
-        });
-
-        //Navigating back to home page
-        history.push('/');
     }
 
 
