@@ -13,3 +13,33 @@
 .App-title {
   font-size: 2em;
 }
+
+.container {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body{
+  background-color:indianred;
+}
+.row{
+  height: 150px;
+  margin: 10px;
+  border: 100px;
+  background-color: azure;
+}
+button{
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 5px;
+}
+
+.name{
+  font-size: 50px;
+}
