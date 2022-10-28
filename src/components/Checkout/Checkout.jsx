@@ -47,7 +47,7 @@ function Checkout({addOrder}){
           //Navigating back to home page
           history.push('/');
             } else if (result.isDenied) {
-              swal.fire('Changes are not saved', '', 'info')
+              swal.fire('Checkout not complete!', '', 'info')
             }
           })
         
