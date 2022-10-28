@@ -43,6 +43,8 @@ function Checkout({addOrder}){
                     type: 'CLR_NEW_ORDER',
                     payload: ''
                 });
+
+                //Clear the cart
   
           //Navigating back to home page
           history.push('/');
@@ -52,7 +54,6 @@ function Checkout({addOrder}){
           })
         
     }
-
 
     return(
         <>
@@ -81,6 +82,8 @@ function Checkout({addOrder}){
                 </tr>
             </thead>
             <tbody>
+                {/* map through cart and get pizza items */}
+                {/* put pizza items into separate component */}
                 <tr>
                     <td>Return pizza name here</td>
                     <td>Return price from pizza table here</td>
