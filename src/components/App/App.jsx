@@ -5,9 +5,16 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Checkout from '../Checkout/Checkout';
+import CustomerForm from '../CustomerForm/CustomerForm';
+
 
 // IMPORT COMPONENTS 
+
+import SelectPizza from '../SelectPizza/SelectPizza';
+
+
 import Admin from '../Admin/Admin';
+
 
 
 
@@ -81,6 +88,9 @@ const addOrder = (order) => {
 
     <Router>
     <div className='App'>
+
+      <Route path="/" exact>
+      
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
@@ -89,11 +99,20 @@ const addOrder = (order) => {
           <Checkout />
       </Route>
   
+      <Route exact path='/customer_form'>     
+         <CustomerForm  addOrder={addOrder}/>
 
+      </Route>
+
+      {/* <img src='images/pizza_photo.png' /> */}
+      <p>Pizza is great.</p>
+      <SelectPizza />
+       </Route>
+    
       <Route exact path = "/admin">
         <Admin fetchAllOrders = {fetchAllOrders}/> 
-      </Route>
-  
+      </Route>  
+      
     </div>
     </Router>
   );
