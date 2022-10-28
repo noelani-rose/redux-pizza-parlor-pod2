@@ -41,11 +41,11 @@ const newOrder = (state = {}, action) => {
 const total = (state = 0, action) =>{
     switch (action.type){
         case 'ADD_TOTAL':
-            state + action.payload;
-            return state;
+            let newTotal =state + Number(action.payload);
+            return Math.ceil(newTotal*100)/100;
         case 'REMOVE_TOTAL':
-            state - action.payload;
-            return state;
+             let reducedTotal =state - Number(action.payload);
+            return Math.ceil(reducedTotal*100)/100;
         default: return state;
     }
 }
